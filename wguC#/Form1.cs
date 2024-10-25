@@ -68,9 +68,11 @@ namespace wguC_
         {
             if (lstParts.CurrentRow != null && lstParts.CurrentRow.DataBoundItem is Part selectedPart)
             {
-                selectedPart.Name = "Modified Part"; 
-                inventory.updatePart(selectedPart.PartID, selectedPart);
-                RefreshPartsList();
+                ModifyPartForm modifyPartForm = new ModifyPartForm(inventory, selectedPart);
+                if (modifyPartForm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshPartsList();
+                }
             }
             else
             {
@@ -78,7 +80,7 @@ namespace wguC_
             }
         }
 
-        private void btnDeletePart_Click(object sender, EventArgs e)
+            private void btnDeletePart_Click(object sender, EventArgs e)
         {
             if (lstParts.CurrentRow != null && lstParts.CurrentRow.DataBoundItem is Part selectedPart)
             {
@@ -118,18 +120,24 @@ namespace wguC_
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            Product newProduct = new Product { ProductID = 2, Name = "New Product", Price = 49.99M, InStock = 10, Min = 1, Max = 20 };
-            inventory.addProduct(newProduct);
-            RefreshProductsList();
+            AddProductForm addProductForm = new AddProductForm(inventory);
+
+            if (addProductForm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshProductsList(); 
+            }
         }
 
         private void btnModifyProduct_Click(object sender, EventArgs e)
         {
-            if (lstProducts.CurrentRow != null && lstProducts.CurrentRow.DataBoundItem is Product selectedProduct)
+            if (lstProducts.CurrentRow?.DataBoundItem is Product selectedProduct)
             {
-                selectedProduct.Name = "Modified Product";  
-                inventory.updateProduct(selectedProduct.ProductID, selectedProduct);
-                RefreshProductsList();
+                ModifyProductForm modifyProductForm = new ModifyProductForm(inventory, selectedProduct);
+
+                if (modifyProductForm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshProductsList();
+                }
             }
             else
             {

@@ -1,6 +1,6 @@
 ﻿namespace wguC_
 {
-    partial class AddPartForm
+    partial class ModifyPartForm
     {
         private System.Windows.Forms.RadioButton rbInHouse;
         private System.Windows.Forms.RadioButton rbOutsourced;
@@ -98,7 +98,6 @@
             this.txtInventory.Name = "txtInventory";
             this.txtInventory.Size = new System.Drawing.Size(90, 26);
             this.txtInventory.TabIndex = 4;
-            this.txtInventory.TextChanged += new System.EventHandler(this.txtInventory_TextChanged);
             // 
             // txtPrice
             // 
@@ -185,7 +184,6 @@
             this.lblPrice.Size = new System.Drawing.Size(90, 27);
             this.lblPrice.TabIndex = 15;
             this.lblPrice.Text = "Price";
-            this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
             // 
             // lblMax
             // 
@@ -220,7 +218,7 @@
             this.lblCompanyName.Text = "Company Name";
             this.lblCompanyName.Visible = false;
             // 
-            // AddPartForm
+            // ModifyPartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,8 +243,8 @@
             this.Controls.Add(this.lblMin);
             this.Controls.Add(this.lblMachineID);
             this.Controls.Add(this.lblCompanyName);
-            this.Name = "AddPartForm";
-            this.Text = "Add Part";
+            this.Name = "ModifyPartForm";
+            this.Text = "Modify Part";
             this.ResumeLayout(false);
             this.PerformLayout();
 
