@@ -91,6 +91,8 @@ namespace wguC_
             if (dgvAvailableParts.CurrentRow?.DataBoundItem is Part selectedPart)
             {
                 associatedParts.Add(selectedPart);
+                dgvAssociatedParts.DataSource = null; 
+                dgvAssociatedParts.DataSource = associatedParts; 
             }
         }
 
@@ -99,6 +101,8 @@ namespace wguC_
             if (dgvAssociatedParts.CurrentRow?.DataBoundItem is Part selectedPart)
             {
                 associatedParts.Remove(selectedPart);
+                dgvAssociatedParts.DataSource = null; 
+                dgvAssociatedParts.DataSource = associatedParts; 
             }
         }
 
@@ -118,6 +122,11 @@ namespace wguC_
         private int GenerateProductID()
         {
             return inventory.Products.Count + 1;
+        }
+
+        private void txtMax_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

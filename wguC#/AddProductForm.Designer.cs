@@ -97,14 +97,15 @@
             // 
             // txtMax
             // 
-            this.txtMax.Location = new System.Drawing.Point(79, 250);
+            this.txtMax.Location = new System.Drawing.Point(274, 256);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(100, 26);
             this.txtMax.TabIndex = 4;
+            this.txtMax.TextChanged += new System.EventHandler(this.txtMax_TextChanged);
             // 
             // txtMin
             // 
-            this.txtMin.Location = new System.Drawing.Point(235, 250);
+            this.txtMin.Location = new System.Drawing.Point(72, 250);
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(100, 26);
             this.txtMin.TabIndex = 5;
@@ -220,7 +221,7 @@
             // 
             // lblMax
             // 
-            this.lblMax.Location = new System.Drawing.Point(10, 250);
+            this.lblMax.Location = new System.Drawing.Point(212, 256);
             this.lblMax.Name = "lblMax";
             this.lblMax.Size = new System.Drawing.Size(40, 20);
             this.lblMax.TabIndex = 18;
@@ -228,7 +229,7 @@
             // 
             // lblMin
             // 
-            this.lblMin.Location = new System.Drawing.Point(185, 250);
+            this.lblMin.Location = new System.Drawing.Point(10, 250);
             this.lblMin.Name = "lblMin";
             this.lblMin.Size = new System.Drawing.Size(40, 20);
             this.lblMin.TabIndex = 19;

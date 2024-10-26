@@ -21,11 +21,10 @@ namespace wguC_
             InitializeComponent();
             inventory = passedInventory;
             currentProduct = productToModify;
-
-            PopulateProductDetails(currentProduct);
-
             dgvAvailableParts.DataSource = inventory.AllParts;
+            associatedParts = new BindingList<Part>(currentProduct.AssociatedParts.ToList());
             dgvAssociatedParts.DataSource = associatedParts;
+            PopulateProductDetails(currentProduct);
 
             dgvAvailableParts.AutoGenerateColumns = true;
             dgvAssociatedParts.AutoGenerateColumns = true;
@@ -91,6 +90,9 @@ namespace wguC_
             if (dgvAvailableParts.CurrentRow?.DataBoundItem is Part selectedPart)
             {
                 associatedParts.Add(selectedPart);
+
+                dgvAssociatedParts.DataSource = null; 
+                dgvAssociatedParts.DataSource = associatedParts; 
             }
         }
 
@@ -99,6 +101,8 @@ namespace wguC_
             if (dgvAssociatedParts.CurrentRow?.DataBoundItem is Part selectedPart)
             {
                 associatedParts.Remove(selectedPart);
+                dgvAssociatedParts.DataSource = null; 
+                dgvAssociatedParts.DataSource = associatedParts; 
             }
         }
 

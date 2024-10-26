@@ -82,12 +82,20 @@ namespace wguC_
 
             private void btnDeletePart_Click(object sender, EventArgs e)
         {
-            if (lstParts.CurrentRow != null && lstParts.CurrentRow.DataBoundItem is Part selectedPart)
+            if (lstParts.CurrentRow?.DataBoundItem is Part selectedPart)
             {
-                var result = MessageBox.Show($"Are you sure you want to delete {selectedPart.Name}?", "Delete Part", MessageBoxButtons.YesNo);
+                bool isPartAssociated = inventory.Products.Any(p => p.AssociatedParts.Contains(selectedPart));
+
+                if (isPartAssociated)
+                {
+                    MessageBox.Show($"The part '{selectedPart.Name}' is associated with a product and cannot be deleted.");
+                    return;
+                }
+                var result = MessageBox.Show($"Are you sure you want to delete '{selectedPart.Name}'?", "Confirm Delete", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     inventory.deletePart(selectedPart);
+
                     RefreshPartsList();
                 }
             }

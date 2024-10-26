@@ -84,14 +84,14 @@
             // 
             // txtMax
             // 
-            this.txtMax.Location = new System.Drawing.Point(50, 250);
+            this.txtMax.Location = new System.Drawing.Point(260, 253);
             this.txtMax.Name = "txtMax";
             this.txtMax.Size = new System.Drawing.Size(100, 26);
             this.txtMax.TabIndex = 4;
             // 
             // txtMin
             // 
-            this.txtMin.Location = new System.Drawing.Point(200, 250);
+            this.txtMin.Location = new System.Drawing.Point(75, 250);
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(100, 26);
             this.txtMin.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             // btnAddPart
             // 
-            this.btnAddPart.Location = new System.Drawing.Point(450, 250);
+            this.btnAddPart.Location = new System.Drawing.Point(525, 250);
             this.btnAddPart.Name = "btnAddPart";
             this.btnAddPart.Size = new System.Drawing.Size(75, 40);
             this.btnAddPart.TabIndex = 8;
@@ -200,7 +200,7 @@
             // 
             // lblMax
             // 
-            this.lblMax.Location = new System.Drawing.Point(10, 250);
+            this.lblMax.Location = new System.Drawing.Point(197, 253);
             this.lblMax.Name = "lblMax";
             this.lblMax.Size = new System.Drawing.Size(100, 23);
             this.lblMax.TabIndex = 18;
@@ -208,7 +208,7 @@
             // 
             // lblMin
             // 
-            this.lblMin.Location = new System.Drawing.Point(160, 250);
+            this.lblMin.Location = new System.Drawing.Point(10, 253);
             this.lblMin.Name = "lblMin";
             this.lblMin.Size = new System.Drawing.Size(100, 23);
             this.lblMin.TabIndex = 19;
